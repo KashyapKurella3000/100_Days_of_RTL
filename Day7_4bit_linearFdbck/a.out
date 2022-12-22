@@ -1,0 +1,107 @@
+#! /usr/share/iverilog-0.10.0/bin/vvp
+:ivl_version "0.10.0 (devel)" "(v0_9_6)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+:vpi_module "v2009";
+S_0x193bb00 .scope module, "sftb" "sftb" 2 3;
+ .timescale 0 0;
+v0x19504c0_0 .var "clk", 0 0;
+v0x1950560_0 .net "out", 3 0, L_0x1950c20;  1 drivers
+v0x1950630_0 .var "reset", 0 0;
+S_0x193bc80 .scope begin, "$ivl_for_loop0" "$ivl_for_loop0" 2 26, 2 26 0, S_0x193bb00;
+ .timescale 0 0;
+v0x1918c40_0 .var/2s "i", 31 0;
+E_0x1918870 .event posedge, v0x194ff40_0;
+S_0x194f8d0 .scope module, "x1" "xorsf" 2 8, 3 2 0, S_0x193bb00;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk"
+    .port_info 1 /INPUT 1 "reset"
+    .port_info 2 /OUTPUT 4 "out"
+L_0x19509a0 .functor XOR 1, L_0x1950830, L_0x1950900, C4<0>, C4<0>;
+L_0x1950c20 .functor BUFZ 4, v0x1950210_0, C4<0000>, C4<0000>, C4<0000>;
+v0x194fb90_0 .net *"_s1", 2 0, L_0x1950730;  1 drivers
+v0x194fc90_0 .net *"_s3", 0 0, L_0x1950830;  1 drivers
+v0x194fd70_0 .net *"_s5", 0 0, L_0x1950900;  1 drivers
+v0x194fe60_0 .net *"_s6", 0 0, L_0x19509a0;  1 drivers
+v0x194ff40_0 .net "clk", 0 0, v0x19504c0_0;  1 drivers
+v0x1950050_0 .net "next", 3 0, L_0x1950ae0;  1 drivers
+v0x1950130_0 .net "out", 3 0, L_0x1950c20;  alias, 1 drivers
+v0x1950210_0 .var "present", 3 0;
+v0x19502f0_0 .net "reset", 0 0, v0x1950630_0;  1 drivers
+E_0x194fb10 .event posedge, v0x19502f0_0, v0x194ff40_0;
+L_0x1950730 .part v0x1950210_0, 0, 3;
+L_0x1950830 .part v0x1950210_0, 1, 1;
+L_0x1950900 .part v0x1950210_0, 3, 1;
+L_0x1950ae0 .concat [ 1 3 0 0], L_0x19509a0, L_0x1950730;
+    .scope S_0x194f8d0;
+T_0 ;
+    %wait E_0x194fb10;
+    %load/v 8, v0x19502f0_0, 1;
+    %jmp/0xz  T_0.0, 8;
+    %movi 8, 14, 4;
+    %ix/load 0, 4, 0;
+    %assign/v0 v0x1950210_0, 0, 8;
+    %jmp T_0.1;
+T_0.0 ;
+    %load/v 8, v0x1950050_0, 4;
+    %ix/load 0, 4, 0;
+    %assign/v0 v0x1950210_0, 0, 8;
+T_0.1 ;
+    %jmp T_0;
+    .thread T_0;
+    .scope S_0x193bb00;
+T_1 ;
+    %set/v v0x19504c0_0, 1, 1;
+    %delay 5, 0;
+    %set/v v0x19504c0_0, 0, 1;
+    %delay 5, 0;
+    %jmp T_1;
+    .thread T_1;
+    .scope S_0x193bb00;
+T_2 ;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0x1950630_0, 0, 1;
+    %wait E_0x1918870;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0x1950630_0, 0, 0;
+    %fork t_1, S_0x193bc80;
+    %jmp t_0;
+    .scope S_0x193bc80;
+t_1 ;
+    %set/v v0x1918c40_0, 0, 32;
+T_2.0 ;
+    %load/v 8, v0x1918c40_0, 32;
+    %ix/get/s 4, 8, 32;
+    %ix/load 5, 32, 0;
+    %cmp/ws 4, 5;
+    %mov 8, 5, 1;
+    %jmp/0xz T_2.1, 8;
+    %wait E_0x1918870;
+    %ix/load 0, 1, 0;
+    %load/vp0/s 8, v0x1918c40_0, 32;
+    %cast2 8, 8, 32;
+    %set/v v0x1918c40_0, 8, 32;
+    %jmp T_2.0;
+T_2.1 ;
+    %end;
+    .scope S_0x193bb00;
+t_0 %join;
+    %vpi_call/w 2 28 "$finish" {0 0};
+    %end;
+    .thread T_2;
+    .scope S_0x193bb00;
+T_3 ;
+    %vpi_call/w 2 33 "$dumpfile", "day7.vcd" {0 0};
+    %vpi_call/w 2 34 "$dumpvars", 1'sb0, S_0x193bb00 {0 0};
+    %end;
+    .thread T_3;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "testbench.sv";
+    "design.sv";

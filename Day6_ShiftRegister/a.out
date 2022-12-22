@@ -1,0 +1,107 @@
+#! /usr/share/iverilog-0.10.0/bin/vvp
+:ivl_version "0.10.0 (devel)" "(v0_9_6)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+:vpi_module "v2009";
+S_0x12c2930 .scope module, "Shift_Tb" "Shift_Tb" 2 4;
+ .timescale 0 0;
+v0x12e9090_0 .var "clk", 0 0;
+v0x12e9150_0 .var "din", 0 0;
+v0x12e9220_0 .net "out", 3 0, L_0x12e9660;  1 drivers
+v0x12e9320_0 .var "reset", 0 0;
+S_0x12d2a00 .scope begin, "$ivl_for_loop0" "$ivl_for_loop0" 2 29, 2 29 0, S_0x12c2930;
+ .timescale 0 0;
+v0x12c1fe0_0 .var/2s "i", 31 0;
+E_0x12af310 .event posedge, v0x12e8ad0_0;
+S_0x12e8760 .scope module, "sr" "Shift_Register" 2 10, 3 3 0, S_0x12c2930;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk"
+    .port_info 1 /INPUT 1 "reset"
+    .port_info 2 /INPUT 1 "din"
+    .port_info 3 /OUTPUT 4 "out"
+L_0x12e9660 .functor BUFZ 4, v0x12e8e70_0, C4<0000>, C4<0000>, C4<0000>;
+v0x12e89f0_0 .net *"_s1", 2 0, L_0x12e93f0;  1 drivers
+v0x12e8ad0_0 .net "clk", 0 0, v0x12e9090_0;  1 drivers
+v0x12e8b90_0 .net "din", 0 0, v0x12e9150_0;  1 drivers
+v0x12e8c60_0 .net "next", 3 0, L_0x12e94f0;  1 drivers
+v0x12e8d40_0 .net "out", 3 0, L_0x12e9660;  alias, 1 drivers
+v0x12e8e70_0 .var "present", 3 0;
+v0x12e8f50_0 .net "reset", 0 0, v0x12e9320_0;  1 drivers
+L_0x12e93f0 .part v0x12e8e70_0, 0, 3;
+L_0x12e94f0 .concat [ 1 3 0 0], v0x12e9150_0, L_0x12e93f0;
+    .scope S_0x12e8760;
+T_0 ;
+    %wait E_0x12af310;
+    %load/v 8, v0x12e8f50_0, 1;
+    %jmp/0xz  T_0.0, 8;
+    %ix/load 0, 4, 0;
+    %assign/v0 v0x12e8e70_0, 0, 0;
+    %jmp T_0.1;
+T_0.0 ;
+    %load/v 8, v0x12e8c60_0, 4;
+    %ix/load 0, 4, 0;
+    %assign/v0 v0x12e8e70_0, 0, 8;
+T_0.1 ;
+    %jmp T_0;
+    .thread T_0;
+    .scope S_0x12c2930;
+T_1 ;
+    %set/v v0x12e9090_0, 1, 1;
+    %delay 5, 0;
+    %set/v v0x12e9090_0, 0, 1;
+    %delay 5, 0;
+    %jmp T_1;
+    .thread T_1;
+    .scope S_0x12c2930;
+T_2 ;
+    %set/v v0x12e9320_0, 1, 1;
+    %set/v v0x12e9150_0, 0, 1;
+    %wait E_0x12af310;
+    %set/v v0x12e9320_0, 0, 1;
+    %wait E_0x12af310;
+    %fork t_1, S_0x12d2a00;
+    %jmp t_0;
+    .scope S_0x12d2a00;
+t_1 ;
+    %set/v v0x12c1fe0_0, 0, 32;
+T_2.0 ;
+    %load/v 8, v0x12c1fe0_0, 32;
+    %ix/get/s 4, 8, 32;
+    %ix/load 5, 16, 0;
+    %cmp/ws 4, 5;
+    %mov 8, 5, 1;
+    %jmp/0xz T_2.1, 8;
+    %vpi_func 2 31 "$random", 8, 32 {0 0};
+    %movi 40, 2, 32;
+    %mod/s 8, 40, 32;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0x12e9150_0, 0, 8;
+    %wait E_0x12af310;
+    %movi 8, 2, 32;
+    %set/v v0x12c1fe0_0, 8, 32;
+    %jmp T_2.0;
+T_2.1 ;
+    %end;
+    .scope S_0x12c2930;
+t_0 %join;
+    %end;
+    .thread T_2;
+    .scope S_0x12c2930;
+T_3 ;
+    %vpi_call/w 2 38 "$dumpfile", "day6.vcd" {0 0};
+    %vpi_call/w 2 39 "$dumpvars", 1'sb0, S_0x12c2930 {0 0};
+    %vpi_call/w 2 40 "$monitor", "clk = %b,reset =%b, input = %b, output = %4b", v0x12e9090_0, v0x12e9320_0, v0x12e9150_0, v0x12e9220_0 {0 0};
+    %delay 300, 0;
+    %vpi_call/w 2 41 "$finish" {0 0};
+    %end;
+    .thread T_3;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "testbench.sv";
+    "design.sv";

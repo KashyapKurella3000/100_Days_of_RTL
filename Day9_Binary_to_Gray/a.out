@@ -1,0 +1,94 @@
+#! /usr/share/iverilog-0.10.0/bin/vvp
+:ivl_version "0.10.0 (devel)" "(v0_9_6)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+:vpi_module "v2009";
+S_0x10d9520 .scope module, "gtob_tb" "gtob_tb" 2 4;
+ .timescale 0 0;
+v0x10ef480_0 .var "Bini", 3 0;
+v0x10ef570_0 .net "Grayo", 3 0, L_0x10efec0;  1 drivers
+S_0x10d96a0 .scope begin, "$ivl_for_loop0" "$ivl_for_loop0" 2 13, 2 13 0, S_0x10d9520;
+ .timescale 0 0;
+v0x10d77b0_0 .var/2s "i", 31 0;
+S_0x10ede10 .scope module, "btog" "BtoG" 2 9, 3 4 0, S_0x10d9520;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "Bini"
+    .port_info 1 /OUTPUT 4 "Grayo"
+P_0x10ee000 .param/l "length" 0 3 8, +C4<0100>;
+v0x10ef150_0 .net "Bini", 3 0, v0x10ef480_0;  1 drivers
+v0x10ef250_0 .net "Grayo", 3 0, L_0x10efec0;  alias, 1 drivers
+v0x10ef330_0 .net *"_s16", 0 0, L_0x10f00a0;  1 drivers
+L_0x10ef640 .part v0x10ef480_0, 3, 1;
+L_0x10ef760 .part v0x10ef480_0, 2, 1;
+L_0x10ef940 .part v0x10ef480_0, 2, 1;
+L_0x10efa70 .part v0x10ef480_0, 1, 1;
+L_0x10efc30 .part v0x10ef480_0, 1, 1;
+L_0x10efcd0 .part v0x10ef480_0, 0, 1;
+L_0x10efec0 .concat8 [ 1 1 1 1], L_0x10efdb0, L_0x10efb40, L_0x10ef800, L_0x10f00a0;
+L_0x10f00a0 .part v0x10ef480_0, 3, 1;
+S_0x10ee100 .scope generate, "genblk001" "genblk001" 3 12, 3 12 0, S_0x10ede10;
+ .timescale 0 0;
+P_0x10ee2f0 .param/l "i" 0 3 12, +C4<00>;
+L_0x10efdb0 .functor XOR 1, L_0x10efc30, L_0x10efcd0, C4<0>, C4<0>;
+v0x10ee3d0_0 .net *"_s0", 0 0, L_0x10efc30;  1 drivers
+v0x10ee4b0_0 .net *"_s1", 0 0, L_0x10efcd0;  1 drivers
+v0x10ee590_0 .net *"_s2", 0 0, L_0x10efdb0;  1 drivers
+S_0x10ee680 .scope generate, "genblk01" "genblk01" 3 12, 3 12 0, S_0x10ede10;
+ .timescale 0 0;
+P_0x10ee870 .param/l "i" 0 3 12, +C4<01>;
+L_0x10efb40 .functor XOR 1, L_0x10ef940, L_0x10efa70, C4<0>, C4<0>;
+v0x10ee930_0 .net *"_s0", 0 0, L_0x10ef940;  1 drivers
+v0x10eea10_0 .net *"_s1", 0 0, L_0x10efa70;  1 drivers
+v0x10eeaf0_0 .net *"_s2", 0 0, L_0x10efb40;  1 drivers
+S_0x10eebe0 .scope generate, "genblk1" "genblk1" 3 12, 3 12 0, S_0x10ede10;
+ .timescale 0 0;
+P_0x10eede0 .param/l "i" 0 3 12, +C4<010>;
+L_0x10ef800 .functor XOR 1, L_0x10ef640, L_0x10ef760, C4<0>, C4<0>;
+v0x10eeea0_0 .net *"_s0", 0 0, L_0x10ef640;  1 drivers
+v0x10eef80_0 .net *"_s1", 0 0, L_0x10ef760;  1 drivers
+v0x10ef060_0 .net *"_s2", 0 0, L_0x10ef800;  1 drivers
+    .scope S_0x10d9520;
+T_0 ;
+    %fork t_1, S_0x10d96a0;
+    %jmp t_0;
+    .scope S_0x10d96a0;
+t_1 ;
+    %set/v v0x10d77b0_0, 0, 32;
+T_0.0 ;
+    %load/v 8, v0x10d77b0_0, 32;
+    %ix/get/s 4, 8, 32;
+    %ix/load 5, 16, 0;
+    %cmp/ws 4, 5;
+    %mov 8, 5, 1;
+    %jmp/0xz T_0.1, 8;
+    %load/v 8, v0x10d77b0_0, 32;
+    %set/v v0x10ef480_0, 8, 4;
+    %delay 5, 0;
+    %ix/load 0, 1, 0;
+    %load/vp0/s 8, v0x10d77b0_0, 32;
+    %cast2 8, 8, 32;
+    %set/v v0x10d77b0_0, 8, 32;
+    %jmp T_0.0;
+T_0.1 ;
+    %end;
+    .scope S_0x10d9520;
+t_0 %join;
+    %vpi_call/w 2 18 "$finish" {0 0};
+    %end;
+    .thread T_0;
+    .scope S_0x10d9520;
+T_1 ;
+    %vpi_call/w 2 23 "$dumpfile", "day9.vcd" {0 0};
+    %vpi_call/w 2 24 "$dumpvars", 3'sb010, S_0x10d9520 {0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "testbench.sv";
+    "design.sv";
