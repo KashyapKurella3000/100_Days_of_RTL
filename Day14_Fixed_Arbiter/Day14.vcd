@@ -1,0 +1,197 @@
+$date
+	Tue Jan 10 22:56:35 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module f_arb_tb $end
+$var wire 4 ! gnt_o [3:0] $end
+$var reg 4 " req_i [3:0] $end
+$scope module f $end
+$var wire 4 # req_i [3:0] $end
+$var wire 4 $ gnt_o [3:0] $end
+$scope begin genblk001 $end
+$upscope $end
+$scope begin genblk01 $end
+$upscope $end
+$scope begin genblk1 $end
+$upscope $end
+$upscope $end
+$scope begin $ivl_for_loop0 $end
+$var integer 32 % i [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 %
+b1 $
+b1001 #
+b1001 "
+b1 !
+$end
+#5
+b100 !
+b100 $
+b100 "
+b100 #
+b1 %
+#10
+b0 !
+b0 $
+b0 "
+b0 #
+b10 %
+#15
+b1 !
+b1 $
+b11 "
+b11 #
+b11 %
+#20
+b1000 !
+b1000 $
+b1000 "
+b1000 #
+b100 %
+#25
+b100 !
+b100 $
+b1100 "
+b1100 #
+b101 %
+#30
+b1 !
+b1 $
+b11 "
+b11 #
+b110 %
+#35
+b0 !
+b0 $
+b0 "
+b0 #
+b111 %
+#40
+b1000 !
+b1000 $
+b1000 "
+b1000 #
+b1000 %
+#45
+b1001 %
+#50
+b1 !
+b1 $
+b1011 "
+b1011 #
+b1010 %
+#55
+b1001 "
+b1001 #
+b1011 %
+#60
+b1111 "
+b1111 #
+b1100 %
+#65
+b100 !
+b100 $
+b1100 "
+b1100 #
+b1101 %
+#70
+b1 !
+b1 $
+b1111 "
+b1111 #
+b1110 %
+#75
+b10 !
+b10 $
+b110 "
+b110 #
+b1111 %
+#80
+b10000 %
+#85
+b1 !
+b1 $
+b101 "
+b101 #
+b10001 %
+#90
+b1111 "
+b1111 #
+b10010 %
+#95
+b11 "
+b11 #
+b10011 %
+#100
+b0 !
+b0 $
+b0 "
+b0 #
+b10100 %
+#105
+b100 !
+b100 $
+b1100 "
+b1100 #
+b10101 %
+#110
+b1 !
+b1 $
+b1111 "
+b1111 #
+b10110 %
+#115
+b10 !
+b10 $
+b110 "
+b110 #
+b10111 %
+#120
+b1 !
+b1 $
+b111 "
+b111 #
+b11000 %
+#125
+b10 !
+b10 $
+b110 "
+b110 #
+b11001 %
+#130
+b1010 "
+b1010 #
+b11010 %
+#135
+b1 !
+b1 $
+b101 "
+b101 #
+b11011 %
+#140
+b1 "
+b1 #
+b11100 %
+#145
+b11 "
+b11 #
+b11101 %
+#150
+b11110 %
+#155
+b1000 !
+b1000 $
+b1000 "
+b1000 #
+b11111 %
+#160
+b100000 %
