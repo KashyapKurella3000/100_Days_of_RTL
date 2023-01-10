@@ -1,0 +1,327 @@
+#! /usr/share/iverilog-0.10.0/bin/vvp
+:ivl_version "0.10.0 (devel)" "(v0_9_6)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+:vpi_module "v2009";
+S_0xdce1f0 .scope module, "mux_tb" "mux_tb" 2 5;
+ .timescale 0 0;
+v0xdede70_0 .var "a_i", 3 0;
+v0xdedf50_0 .var "sel_i", 3 0;
+v0xdee020_0 .net "y_aor_o", 0 0, L_0xdefe10;  1 drivers
+v0xdee120_0 .net "y_case_o", 0 0, v0xdeda50_0;  1 drivers
+v0xdee1f0_0 .net "y_ifelse_o", 0 0, v0xdedb10_0;  1 drivers
+v0xdee290_0 .net "y_loop_o", 0 0, v0xdedbd0_0;  1 drivers
+v0xdee360_0 .net "y_ter_o", 0 0, L_0xdeee40;  1 drivers
+S_0xdce370 .scope begin, "$ivl_for_loop1" "$ivl_for_loop1" 2 27, 2 27 0, S_0xdce1f0;
+ .timescale 0 0;
+v0xdbce50_0 .var/2s "i", 31 0;
+S_0xdebb70 .scope module, "DAY13" "mux" 2 23, 3 4 0, S_0xdce1f0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "a_i"
+    .port_info 1 /INPUT 4 "sel_i"
+    .port_info 2 /OUTPUT 1 "y_ter_o"
+    .port_info 3 /OUTPUT 1 "y_case_o"
+    .port_info 4 /OUTPUT 1 "y_ifelse_o"
+    .port_info 5 /OUTPUT 1 "y_loop_o"
+    .port_info 6 /OUTPUT 1 "y_aor_o"
+L_0xdef1e0 .functor AND 1, L_0xdef030, L_0xdef0d0, C4<1>, C4<1>;
+L_0xdef170 .functor AND 1, L_0xdef2f0, L_0xdef390, C4<1>, C4<1>;
+L_0xdef550 .functor OR 1, L_0xdef1e0, L_0xdef170, C4<0>, C4<0>;
+L_0xdef8b0 .functor AND 1, L_0xdef660, L_0xdef700, C4<1>, C4<1>;
+L_0xdef9c0 .functor OR 1, L_0xdef550, L_0xdef8b0, C4<0>, C4<0>;
+L_0xdee8b0 .functor AND 1, L_0xdefad0, L_0xdefc80, C4<1>, C4<1>;
+L_0xdefe10 .functor OR 1, L_0xdef9c0, L_0xdee8b0, C4<0>, C4<0>;
+v0xdec210_0 .net *"_s1", 0 0, L_0xdee430;  1 drivers
+v0xdec310_0 .net *"_s11", 0 0, L_0xdee940;  1 drivers
+v0xdec3f0_0 .net *"_s13", 0 0, L_0xdeeaa0;  1 drivers
+v0xdec4e0_0 .net *"_s14", 0 0, L_0xdeeb40;  1 drivers
+v0xdec5c0_0 .net *"_s16", 0 0, L_0xdeecb0;  1 drivers
+v0xdec6f0_0 .net *"_s21", 0 0, L_0xdef030;  1 drivers
+v0xdec7d0_0 .net *"_s23", 0 0, L_0xdef0d0;  1 drivers
+v0xdec8b0_0 .net *"_s24", 0 0, L_0xdef1e0;  1 drivers
+v0xdec990_0 .net *"_s27", 0 0, L_0xdef2f0;  1 drivers
+v0xdecb00_0 .net *"_s29", 0 0, L_0xdef390;  1 drivers
+v0xdecbe0_0 .net *"_s3", 0 0, L_0xdee550;  1 drivers
+v0xdeccc0_0 .net *"_s30", 0 0, L_0xdef170;  1 drivers
+v0xdecda0_0 .net *"_s32", 0 0, L_0xdef550;  1 drivers
+v0xdece80_0 .net *"_s35", 0 0, L_0xdef660;  1 drivers
+v0xdecf60_0 .net *"_s37", 0 0, L_0xdef700;  1 drivers
+v0xded040_0 .net *"_s38", 0 0, L_0xdef8b0;  1 drivers
+v0xded120_0 .net *"_s40", 0 0, L_0xdef9c0;  1 drivers
+v0xded2d0_0 .net *"_s43", 0 0, L_0xdefad0;  1 drivers
+v0xded370_0 .net *"_s45", 0 0, L_0xdefc80;  1 drivers
+v0xded450_0 .net *"_s46", 0 0, L_0xdee8b0;  1 drivers
+v0xded530_0 .net *"_s5", 0 0, L_0xdee640;  1 drivers
+v0xded610_0 .net *"_s7", 0 0, L_0xdee6e0;  1 drivers
+v0xded6f0_0 .net *"_s9", 0 0, L_0xdee7e0;  1 drivers
+v0xded7d0_0 .net "a_i", 3 0, v0xdede70_0;  1 drivers
+v0xded8b0_0 .net "sel_i", 3 0, v0xdedf50_0;  1 drivers
+v0xded990_0 .net "y_aor_o", 0 0, L_0xdefe10;  alias, 1 drivers
+v0xdeda50_0 .var "y_case_o", 0 0;
+v0xdedb10_0 .var "y_ifelse_o", 0 0;
+v0xdedbd0_0 .var "y_loop_o", 0 0;
+v0xdedc90_0 .net "y_ter_o", 0 0, L_0xdeee40;  alias, 1 drivers
+E_0xdebe50 .event edge, v0xdec110_0, v0xded8b0_0, v0xded7d0_0, v0xdedbd0_0;
+E_0xdebec0 .event edge, v0xded8b0_0, v0xded7d0_0;
+L_0xdee430 .part v0xdedf50_0, 0, 1;
+L_0xdee550 .part v0xdede70_0, 0, 1;
+L_0xdee640 .part v0xdedf50_0, 1, 1;
+L_0xdee6e0 .part v0xdede70_0, 1, 1;
+L_0xdee7e0 .part v0xdedf50_0, 2, 1;
+L_0xdee940 .part v0xdede70_0, 2, 1;
+L_0xdeeaa0 .part v0xdede70_0, 3, 1;
+L_0xdeeb40 .functor MUXZ 1, L_0xdeeaa0, L_0xdee940, L_0xdee7e0, C4<>;
+L_0xdeecb0 .functor MUXZ 1, L_0xdeeb40, L_0xdee6e0, L_0xdee640, C4<>;
+L_0xdeee40 .functor MUXZ 1, L_0xdeecb0, L_0xdee550, L_0xdee430, C4<>;
+L_0xdef030 .part v0xdedf50_0, 0, 1;
+L_0xdef0d0 .part v0xdede70_0, 0, 1;
+L_0xdef2f0 .part v0xdedf50_0, 1, 1;
+L_0xdef390 .part v0xdede70_0, 1, 1;
+L_0xdef660 .part v0xdedf50_0, 2, 1;
+L_0xdef700 .part v0xdede70_0, 2, 1;
+L_0xdefad0 .part v0xdedf50_0, 3, 1;
+L_0xdefc80 .part v0xdede70_0, 3, 1;
+S_0xdebf20 .scope begin, "$ivl_for_loop0" "$ivl_for_loop0" 3 49, 3 49 0, S_0xdebb70;
+ .timescale 0 0;
+v0xdec110_0 .var/2s "i", 31 0;
+    .scope S_0xdebb70;
+T_0 ;
+    %wait E_0xdebec0;
+    %load/v 8, v0xded8b0_0, 4;
+    %cmpi/u 8, 1, 4;
+    %jmp/1 T_0.0, 6;
+    %cmpi/u 8, 2, 4;
+    %jmp/1 T_0.1, 6;
+    %cmpi/u 8, 4, 4;
+    %jmp/1 T_0.2, 6;
+    %cmpi/u 8, 8, 4;
+    %jmp/1 T_0.3, 6;
+    %set/v v0xdeda50_0, 2, 1;
+    %jmp T_0.5;
+T_0.0 ;
+    %load/v 8, v0xded7d0_0, 1; Only need 1 of 4 bits
+; Save base=8 wid=1 in lookaside.
+    %set/v v0xdeda50_0, 8, 1;
+    %jmp T_0.5;
+T_0.1 ;
+    %ix/load 1, 1, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_0.6, 4;
+    %load/x1p 8, v0xded7d0_0, 1;
+    %jmp T_0.7;
+T_0.6 ;
+    %mov 8, 2, 1;
+T_0.7 ;
+; Save base=8 wid=1 in lookaside.
+    %set/v v0xdeda50_0, 8, 1;
+    %jmp T_0.5;
+T_0.2 ;
+    %ix/load 1, 2, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_0.8, 4;
+    %load/x1p 8, v0xded7d0_0, 1;
+    %jmp T_0.9;
+T_0.8 ;
+    %mov 8, 2, 1;
+T_0.9 ;
+; Save base=8 wid=1 in lookaside.
+    %set/v v0xdeda50_0, 8, 1;
+    %jmp T_0.5;
+T_0.3 ;
+    %ix/load 1, 3, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_0.10, 4;
+    %load/x1p 8, v0xded7d0_0, 1;
+    %jmp T_0.11;
+T_0.10 ;
+    %mov 8, 2, 1;
+T_0.11 ;
+; Save base=8 wid=1 in lookaside.
+    %set/v v0xdeda50_0, 8, 1;
+    %jmp T_0.5;
+T_0.5 ;
+    %jmp T_0;
+    .thread T_0, $push;
+    .scope S_0xdebb70;
+T_1 ;
+    %wait E_0xdebec0;
+    %load/v 8, v0xded8b0_0, 1; Only need 1 of 4 bits
+; Save base=8 wid=1 in lookaside.
+    %jmp/0xz  T_1.0, 8;
+    %load/v 8, v0xded7d0_0, 1; Only need 1 of 4 bits
+; Save base=8 wid=1 in lookaside.
+    %set/v v0xdedb10_0, 8, 1;
+    %jmp T_1.1;
+T_1.0 ;
+    %ix/load 1, 1, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.2, 4;
+    %load/x1p 8, v0xded8b0_0, 1;
+    %jmp T_1.3;
+T_1.2 ;
+    %mov 8, 2, 1;
+T_1.3 ;
+; Save base=8 wid=1 in lookaside.
+    %jmp/0xz  T_1.4, 8;
+    %ix/load 1, 1, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.6, 4;
+    %load/x1p 8, v0xded7d0_0, 1;
+    %jmp T_1.7;
+T_1.6 ;
+    %mov 8, 2, 1;
+T_1.7 ;
+; Save base=8 wid=1 in lookaside.
+    %set/v v0xdedb10_0, 8, 1;
+    %jmp T_1.5;
+T_1.4 ;
+    %ix/load 1, 2, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.8, 4;
+    %load/x1p 8, v0xded8b0_0, 1;
+    %jmp T_1.9;
+T_1.8 ;
+    %mov 8, 2, 1;
+T_1.9 ;
+; Save base=8 wid=1 in lookaside.
+    %jmp/0xz  T_1.10, 8;
+    %ix/load 1, 2, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.12, 4;
+    %load/x1p 8, v0xded7d0_0, 1;
+    %jmp T_1.13;
+T_1.12 ;
+    %mov 8, 2, 1;
+T_1.13 ;
+; Save base=8 wid=1 in lookaside.
+    %set/v v0xdedb10_0, 8, 1;
+    %jmp T_1.11;
+T_1.10 ;
+    %ix/load 1, 3, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.14, 4;
+    %load/x1p 8, v0xded8b0_0, 1;
+    %jmp T_1.15;
+T_1.14 ;
+    %mov 8, 2, 1;
+T_1.15 ;
+; Save base=8 wid=1 in lookaside.
+    %jmp/0xz  T_1.16, 8;
+    %ix/load 1, 3, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.18, 4;
+    %load/x1p 8, v0xded7d0_0, 1;
+    %jmp T_1.19;
+T_1.18 ;
+    %mov 8, 2, 1;
+T_1.19 ;
+; Save base=8 wid=1 in lookaside.
+    %set/v v0xdedb10_0, 8, 1;
+    %jmp T_1.17;
+T_1.16 ;
+    %set/v v0xdedb10_0, 2, 1;
+T_1.17 ;
+T_1.11 ;
+T_1.5 ;
+T_1.1 ;
+    %jmp T_1;
+    .thread T_1, $push;
+    .scope S_0xdebb70;
+T_2 ;
+    %wait E_0xdebe50;
+    %set/v v0xdedbd0_0, 0, 1;
+    %fork t_1, S_0xdebf20;
+    %jmp t_0;
+    .scope S_0xdebf20;
+t_1 ;
+    %set/v v0xdec110_0, 0, 32;
+T_2.0 ;
+    %load/v 8, v0xdec110_0, 32;
+    %ix/get/s 4, 8, 32;
+    %ix/load 5, 4, 0;
+    %cmp/ws 4, 5;
+    %mov 8, 5, 1;
+    %jmp/0xz T_2.1, 8;
+    %ix/getv/s 1, v0xdec110_0;
+    %jmp/1 T_2.2, 4;
+    %load/x1p 8, v0xded8b0_0, 1;
+    %jmp T_2.3;
+T_2.2 ;
+    %mov 8, 2, 1;
+T_2.3 ;
+; Save base=8 wid=1 in lookaside.
+    %ix/getv/s 1, v0xdec110_0;
+    %jmp/1 T_2.4, 4;
+    %load/x1p 9, v0xded7d0_0, 1;
+    %jmp T_2.5;
+T_2.4 ;
+    %mov 9, 2, 1;
+T_2.5 ;
+; Save base=9 wid=1 in lookaside.
+    %and 8, 9, 1;
+    %load/v 9, v0xdedbd0_0, 1;
+    %or 8, 9, 1;
+    %set/v v0xdedbd0_0, 8, 1;
+    %load/v 8, v0xdec110_0, 32;
+    %movi 40, 1, 32;
+    %add 40, 8, 32;
+    %cast2 40, 40, 32;
+    %set/v v0xdec110_0, 40, 32;
+    %jmp T_2.0;
+T_2.1 ;
+    %end;
+    .scope S_0xdebb70;
+t_0 %join;
+    %jmp T_2;
+    .thread T_2, $push;
+    .scope S_0xdce1f0;
+T_3 ;
+    %fork t_4, S_0xdce370;
+    %jmp t_3;
+    .scope S_0xdce370;
+t_4 ;
+    %set/v v0xdbce50_0, 0, 32;
+T_3.0 ;
+    %load/v 8, v0xdbce50_0, 32;
+    %ix/get/s 4, 8, 32;
+    %ix/load 5, 32, 0;
+    %cmp/ws 4, 5;
+    %mov 8, 5, 1;
+    %jmp/0xz T_3.1, 8;
+    %vpi_func 2 28 "$urandom_range", 8, 32, 1'sb0, 4'b1111 {0 0};
+    %set/v v0xdede70_0, 8, 4;
+    %movi 8, 1, 4;
+    %vpi_func 2 29 "$urandom_range", 12, 32, 1'sb0, 2'b11 {0 0};
+    %ix/get 0, 12, 32;
+    %shiftl/i0  8, 4;
+    %set/v v0xdedf50_0, 8, 4;
+    %delay 5, 0;
+    %load/v 8, v0xdbce50_0, 32;
+    %movi 40, 1, 32;
+    %add 40, 8, 32;
+    %cast2 40, 40, 32;
+    %set/v v0xdbce50_0, 40, 32;
+    %jmp T_3.0;
+T_3.1 ;
+    %end;
+    .scope S_0xdce1f0;
+t_3 %join;
+    %vpi_call/w 2 32 "$finish" {0 0};
+    %end;
+    .thread T_3;
+    .scope S_0xdce1f0;
+T_4 ;
+    %vpi_call/w 2 37 "$dumpfile", "day13.vcd" {0 0};
+    %vpi_call/w 2 38 "$dumpvars", 1'sb0, S_0xdce1f0 {0 0};
+    %end;
+    .thread T_4;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "testbench.sv";
+    "design.sv";
